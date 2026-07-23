@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filigrane — Modern GNOME PDF Watermarking Application</title>
+    <meta
+      name="description"
+      content="Filigrane is a native modern GNOME desktop app for adding text & logo watermarks to PDF documents with real-time preview, placement presets, and AES-256 protection."
+    />
+    <meta
+      name="keywords"
+      content="Filigrane, PDF watermark, GNOME, GTK4, Libadwaita, Flatpak, Flathub, PDF protection, Linux application"
+    />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Filigrane — Modern GNOME PDF Watermarking App"
+    />
+    <meta
+      property="og:description"
+      content="Add smart, secure and elegant text & image watermarks to PDF documents on Linux."
+    />
+    <meta property="og:image" content="text-watermark.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Filigrane — Modern GNOME PDF Watermarking App"
+    />
+    <meta
+      name="twitter:description"
+      content="Add smart, secure and elegant text & image watermarks to PDF documents on Linux."
+    />
+    <meta name="twitter:image" content="text-watermark.png" />
+
+    <!-- Theme color for browser UI (mobile address bar, PWA) -->
+    <meta
+      name="theme-color"
+      content="#16151f"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#f2f1f6"
+      media="(prefers-color-scheme: light)"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Filigrane",
+        "applicationCategory": "DesktopApplication",
+        "operatingSystem": "Linux",
+        "softwareVersion": "1.0.0",
+        "description": "A native GNOME desktop app for adding text and logo watermarks to PDF documents with real-time preview, placement presets, and AES-256 protection.",
+        "license": "https://gitlab.com/demsking/filigrane/-/blob/main/LICENSE",
+        "downloadUrl": "https://flathub.org/apps/io.gitlab.demsking.filigrane",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="container header-container" id="header-container">
+        <a href="#" class="brand-logo">
+          <img src="logo.png" alt="Filigrane App Icon" class="logo-icon" />
+          <span class="brand-name">Filigrane</span>
+        </a>
+
+        <nav class="main-nav" id="main-nav">
+          <a href="#features">Features</a>
+          <a href="#security">Security</a>
+          <a href="#install">Install</a>
+          <a
+            href="https://gitlab.com/demsking/filigrane"
+            target="_blank"
+            rel="noopener"
+            class="nav-icon-link"
+            aria-label="GitLab Repository"
+          >
+            <svg
+              class="gitlab-icon"
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 5.5 2a.43.43 0 0 1 .39.27L8.14 9.1h7.72l2.25-6.83a.43.43 0 0 1 .39-.27.42.42 0 0 1 .39.19l2.44 7.51 1.22 3.78a.84.84 0 0 1-.3.94z"
+              />
+            </svg>
+          </a>
+        </nav>
+
+        <button
+          id="nav-toggle"
+          class="btn-nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          <svg
+            class="icon-menu"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 6h18M3 12h18M3 18h18"></path>
+          </svg>
+          <svg
+            class="icon-close"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M18 6L6 18M6 6l12 12"></path>
+          </svg>
+        </button>
+
+        <button
+          id="theme-toggle"
+          class="btn-theme-toggle"
+          aria-label="Toggle light and dark theme"
+        >
+          <svg
+            class="icon-sun"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <path
+              d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+            ></path>
+          </svg>
+          <svg
+            class="icon-moon"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="watermark-ghost" aria-hidden="true">FILIGRANE</div>
+
+        <div class="container hero-container">
+          <div class="hero-content">
+            <div class="hero-pill">
+              <span class="pill-dot"></span>
+              GNOME 47+ • GTK4 & Libadwaita • Flatpak Ready
+            </div>
+
+            <h1 class="hero-title">
+              Stamp your PDFs.
+              <span class="gradient-text">Keep them yours.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Filigrane is a native GNOME app for marking PDF documents with
+              text and image watermarks. Preview every change live, place it
+              exactly where you want it, then lock it down so it stays there.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="hero-actions">
+              <a
+                href="https://flathub.org/apps/io.gitlab.demsking.filigrane"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  class="btn-icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  />
+                </svg>
+                Install from Flathub
+              </a>
+
+              <a
+                href="filigrane.flatpak"
+                class="btn btn-secondary"
+                download="filigrane.flatpak"
+              >
+                <svg
+                  class="btn-icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
+                  />
+                </svg>
+                Download Flatpak (.flatpak)
+              </a>
+            </div>
+
+            <!-- Command Copy Box -->
+            <div class="cmd-box">
+              <span class="cmd-prefix">$</span>
+              <code class="cmd-text"
+                >flatpak install flathub io.gitlab.demsking.filigrane</code
+              >
+              <button
+                class="btn-copy"
+                id="btn-copy-cmd"
+                title="Copy command to clipboard"
+              >
+                <svg
+                  class="copy-icon"
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  ></path>
+                </svg>
+                <span class="copy-label">Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Showcase Screenshot -->
+          <div class="hero-showcase">
+            <div class="showcase-window">
+              <img
+                src="text-watermark.png"
+                alt="Filigrane's welcome screen, ready to open a PDF"
+                class="app-screenshot"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="section features-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">What it does</span>
+            <h2 class="section-title">Built for precision, not guesswork</h2>
+            <p class="section-subtitle">
+              Everything you need to mark, brand, and protect a document,
+              without leaving the GNOME desktop.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M4 7V4h16v3M9 20h6M12 4v16" />
+                </svg>
+              </div>
+              <h3>Text Watermarks</h3>
+              <p>
+                Set the font, size, color, opacity, and rotation angle. Add
+                bold, italic, or underline to match the tone of the document.
+              </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+              </div>
+              <h3>Image & Logo Watermarks</h3>
+              <p>
+                Drop in a PNG, SVG, or JPEG. Scale it, rotate it, and lock the
+                aspect ratio so your mark stays true at any size.
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <path d="M3 9h18M9 21V9" />
+                </svg>
+              </div>
+              <h3>Placement Presets</h3>
+              <p>
+                Center, corner, or tiled grid — pick a preset or set exact X/Y
+                coordinates by percentage for pixel-level control.
+              </p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-card" id="security">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+              </div>
+              <h3>Anti-tamper Security</h3>
+              <p>
+                Protect the result with AES-256 permission encryption so the
+                watermark can't just be lifted out in Acrobat or Inkscape.
+              </p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </div>
+              <h3>Live Preview</h3>
+              <p>
+                See the watermark on the actual page, across every page of a
+                multi-page PDF, before you commit to saving anything.
+              </p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  />
+                </svg>
+              </div>
+              <h3>Native GNOME & Libadwaita</h3>
+              <p>
+                Built with GTK4, following GNOME's Human Interface Guidelines —
+                with proper dark and light mode support out of the box.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- In Practice Section -->
+      <section class="section practice-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">In practice</span>
+            <h2 class="section-title">From draft to protected, in one pass</h2>
+            <p class="section-subtitle">
+              A text mark, an image mark, and the preferences panel that governs
+              how every document gets treated.
+            </p>
+          </div>
+
+          <div class="practice-grid">
+            <div class="practice-card">
+              <img
+                src="text-watermark.png"
+                alt="Filigrane applying a rotated red CONFIDENTIAL text watermark to a PDF page"
+                loading="lazy"
+              />
+              <div class="practice-caption">
+                <h4>Text, placed exactly</h4>
+                <p>
+                  Color, opacity, and rotation, adjusted live against the real
+                  page.
+                </p>
+              </div>
+            </div>
+
+            <div class="practice-card">
+              <img
+                src="image-watermark.png"
+                alt="Filigrane placing a logo image watermark in the bottom-right corner of a PDF page"
+                loading="lazy"
+              />
+              <div class="practice-caption">
+                <h4>Logos that scale cleanly</h4>
+                <p>
+                  Aspect ratio locked, margins set, corner presets for
+                  consistent branding.
+                </p>
+              </div>
+            </div>
+
+            <div class="practice-card">
+              <img
+                src="app-preferences.png"
+                alt="Filigrane preferences panel with document protection and watermark presets"
+                loading="lazy"
+              />
+              <div class="practice-caption">
+                <h4>Presets you set once</h4>
+                <p>
+                  Save a watermark configuration and reuse it across every
+                  document that needs it.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Installation Section -->
+      <section id="install" class="section install-section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">Get it</span>
+            <h2 class="section-title">Install Filigrane</h2>
+            <p class="section-subtitle">
+              Choose your preferred method to install Filigrane on your Linux
+              system.
+            </p>
+          </div>
+
+          <div class="install-grid">
+            <!-- Method 1: Flathub -->
+            <div class="install-card active-card">
+              <div class="card-badge">Recommended</div>
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+                  />
+                </svg>
+              </div>
+              <h3>Option 1: Flathub repository</h3>
+              <p>
+                Install directly from Flathub to receive automatic updates and
+                isolated sandboxing.
+              </p>
+
+              <div class="cmd-stack">
+                <div class="cmd-box">
+                  <span class="cmd-prefix">$</span>
+                  <code class="cmd-text"
+                    >flatpak install flathub io.gitlab.demsking.filigrane</code
+                  >
+                  <button
+                    class="btn-copy btn-copy-icon"
+                    aria-label="Copy install command"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="9"
+                        y="9"
+                        width="13"
+                        height="13"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="cmd-box">
+                  <span class="cmd-prefix">$</span>
+                  <code class="cmd-text"
+                    >flatpak run io.gitlab.demsking.filigrane</code
+                  >
+                  <button
+                    class="btn-copy btn-copy-icon"
+                    aria-label="Copy run command"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="9"
+                        y="9"
+                        width="13"
+                        height="13"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <path
+                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <a
+                href="https://flathub.org/apps/io.gitlab.demsking.filigrane"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-outline"
+              >
+                View on Flathub
+              </a>
+            </div>
+
+            <!-- Method 2: Direct Flatpak File Download -->
+            <div class="install-card">
+              <div class="feature-icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="22"
+                  height="22"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
+                  />
+                </svg>
+              </div>
+              <h3>Option 2: Direct Flatpak bundle</h3>
+              <p>
+                Download the standalone <code>.flatpak</code> file built
+                directly by our GitLab CI pipeline.
+              </p>
+
+              <div class="cmd-box cmd-box-standalone">
+                <span class="cmd-prefix">$</span>
+                <code class="cmd-text">flatpak install filigrane.flatpak</code>
+                <button
+                  class="btn-copy btn-copy-icon"
+                  aria-label="Copy install command"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <rect
+                      x="9"
+                      y="9"
+                      width="13"
+                      height="13"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path
+                      d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+
+              <a
+                href="filigrane.flatpak"
+                download="filigrane.flatpak"
+                class="btn btn-primary btn-sm"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
+                  />
+                </svg>
+                Download filigrane.flatpak
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="logo.png" width="100" alt="Filigrane" />
+          </div>
+          <div>
+            <span class="footer-title">Filigrane</span>
+            <p class="footer-tagline">Professional PDF watermarking</p>
+            <p>
+              Secure PDFs with professional watermarks, encryption, and
+              fine-grained control.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <div class="link-group">
+            <h4>Project</h4>
+            <a
+              href="https://gitlab.com/demsking/filigrane"
+              target="_blank"
+              rel="noopener"
+              >GitLab Repository</a
+            >
+            <a
+              href="https://flathub.org/apps/io.gitlab.demsking.filigrane"
+              target="_blank"
+              rel="noopener"
+              >Flathub Page</a
+            >
+          </div>
+
+          <div class="link-group">
+            <h4>Community</h4>
+            <a
+              href="https://gitlab.com/demsking/filigrane/-/issues"
+              target="_blank"
+              rel="noopener"
+              >Issue Tracker</a
+            >
+            <a
+              href="https://gitlab.com/demsking/filigrane/-/blob/main/CONTRIBUTING.md"
+              target="_blank"
+              rel="noopener"
+              >Contributing</a
+            >
+            <a
+              href="https://gitlab.com/demsking/filigrane/-/blob/main/LICENSE"
+              target="_blank"
+              rel="noopener"
+              >GNU GPL v3 License</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p>
+            &copy; 2026 Sébastien Demanou. Released under GNU General Public
+            License v3.0.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

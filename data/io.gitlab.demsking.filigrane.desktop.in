@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Filigrane
+Comment=Add text or image watermarks to PDF documents
+Exec=filigrane %U
+Icon=io.gitlab.demsking.filigrane
+Terminal=false
+Type=Application
+Categories=Office;Publishing;GTK;
+MimeType=application/pdf;
+Keywords=PDF;Watermark;Filigrane;Stamp;Sign;Security;
+StartupNotify=true
+X-Purism-FormFactor=Workstation;Mobile;

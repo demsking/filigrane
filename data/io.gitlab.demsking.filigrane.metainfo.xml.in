@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.gitlab.demsking.filigrane</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Filigrane</name>
+
+  <summary>Add text or image watermarks to PDF documents</summary>
+
+  <description>
+    <p>
+      Filigrane is a modern application designed to apply elegant vector text or high-resolution image watermarks to PDF documents quickly and securely.
+    </p>
+    <p>Features include:</p>
+    <ul>
+      <li>Support for custom text watermarks with font selection, opacity, rotation, and alignment</li>
+      <li>Support for PNG, SVG, and JPEG image watermarks with scale and aspect ratio options</li>
+      <li>Multiple placement modes including Center, Corners, Tiled patterns, and custom X/Y positioning</li>
+      <li>Real-time live document preview powered by Poppler</li>
+      <li>Full integration with GNOME Files, recent documents, and native GTK4/Libadwaita portal dialogs</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.gitlab.demsking.filigrane.desktop</launchable>
+  <translation type="gettext">filigrane</translation>
+
+  <screenshots>
+    <screenshot>
+      <caption>Main application interface</caption>
+      <image>https://demsking.gitlab.io/filigrane/main.png</image>
+    </screenshot>
+    <screenshot type="default">
+      <caption>Main application interface with text watermark</caption>
+      <image>https://demsking.gitlab.io/filigrane/text-watermark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Main application interface with image watermark</caption>
+      <image>https://demsking.gitlab.io/filigrane/image-watermark.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Application preferences</caption>
+      <image>https://demsking.gitlab.io/filigrane/app-preferences.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://demsking.gitlab.io/filigrane</url>
+  <url type="bugtracker">https://gitlab.com/demsking/filigrane/-/issues</url>
+  <url type="vcs-browser">https://gitlab.com/demsking/filigrane</url>
+
+  <developer id="io.gitlab.demsking">
+    <name>Sébastien Demanou</name>
+  </developer>
+
+  <branding>
+    <color scheme_preference="light" type="primary">#3584e4</color>
+    <color scheme_preference="dark" type="primary">#3584e4</color>
+  </branding>
+
+  <categories>
+    <category>Office</category>
+    <category>Graphics</category>
+  </categories>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>touch</control>
+  </recommends>
+
+  <content_rating type="oars-1.1" />
+
+  <releases>
+    <release version="@VERSION@" date="2026-07-20">
+      <description>
+        <p>Initial release of Filigrane for GNOME.</p>
+      </description>
+    </release>
+  </releases>
+</component>
+

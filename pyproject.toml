@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filigrane"
+version = "1.0.0b0"
+description = "A modern application designed to apply elegant vector text or high-resolution image watermarks to PDF documents quickly and securely"
+readme = "README.md"
+authors = [
+  { name = "Sébastien Demanou", email = "demsking@gmail.com" }
+]
+license = { text = "GPL-3.0-or-later" }
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: X11 Applications :: GTK",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Office/Business",
+]
+requires-python = ">=3.12"
+dependencies = [
+  "PyGObject>=3.46.0",
+  "pypdf>=6.14.2",
+  "Pillow>=12.3.0",
+  "cryptography>=49.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "mypy>=1.8.0",
+  "ruff>=0.2.0",
+  "PyGObject-stubs>=2.10.0",
+  "meson>=1.0.0",
+  "ninja>=1.10.0",
+]
+
+[project.urls]
+Website = "https://demsking.gitlab.io/filigrane"
+Repository = "https://gitlab.com/demsking/filigrane"
+"Service Desk" = "https://gitlab.com/demsking/filigrane/-/issues/service_desk"
+Issues = "https://gitlab.com/demsking/filigrane/-/issues"
+
+[project.scripts]
+filigrane = "filigrane.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["filigrane*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "C4", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+disallow_subclassing_any = false
+ignore_missing_imports = true
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

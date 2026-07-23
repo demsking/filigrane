@@ -1,0 +1,90 @@
+stages:
+  - lint
+  - test
+  - build
+  - release
+  - deploy
+
+variables:
+  PYTHON_VERSION: "3.12"
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - .venv/
+
+.python-setup:
+  image: python:3.12-bookworm
+  before_script:
+    - apt-get update && apt-get install -y --no-install-recommends libgirepository1.0-dev libcairo2-dev libpango1.0-dev libpoppler-glib-dev gettext
+    - pip install uv
+    - uv venv .venv
+    - source .venv/bin/activate
+    - uv pip install .[dev]
+
+lint:ruff:
+  extends: .python-setup
+  stage: lint
+  script:
+    - source .venv/bin/activate
+    - ruff check filigrane tests
+
+lint:mypy:
+  extends: .python-setup
+  stage: lint
+  script:
+    - source .venv/bin/activate
+    - mypy filigrane
+
+unit-tests:
+  extends: .python-setup
+  stage: test
+  script:
+    - source .venv/bin/activate
+    - pytest --tb=short -v
+  coverage: '/TOTAL\s+\d+\s+\d+\s+(\d+)%/'
+  artifacts:
+    when: always
+    reports:
+      junit: junit-report.xml
+
+flatpak:build:
+  stage: build
+  image: registry.gitlab.com/gnome/gnome-runtime-images/gnome:47
+  script:
+    - flatpak-builder --force-clean --repo=repo build-dir flatpak/io.gitlab.demsking.filigrane.json
+    - flatpak build-bundle repo filigrane.flatpak io.gitlab.demsking.filigrane
+  artifacts:
+    paths:
+      - filigrane.flatpak
+    expire_in: 30 days
+
+release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  rules:
+    - if: $CI_COMMIT_TAG
+  script:
+    - echo "Releasing $CI_COMMIT_TAG"
+  release:
+    name: 'Filigrane $CI_COMMIT_TAG'
+    description: 'Release $CI_COMMIT_TAG of Filigrane PDF Watermark'
+    tag_name: '$CI_COMMIT_TAG'
+    ref: '$CI_COMMIT_SHA'
+
+pages:
+  stage: deploy
+  needs:
+    - flatpak:build
+  script:
+    - mkdir -p public
+    - cp -r htdocs/* public/
+    - cp filigrane.flatpak public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_TAG
+

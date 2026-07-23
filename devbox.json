@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.5/.schema/devbox.schema.json",
+  "packages": [
+    "python@3.12",
+    "pre-commit@latest",
+    "tmux@latest",
+    "tmuxinator@latest",
+    "gnumake@latest",
+    "git@latest",
+    "shellcheck@latest",
+    "pkg-config@latest",
+    "gtk4@latest",
+    "gtk4.dev",
+    "glib.dev",
+    "libadwaita@latest",
+    "libadwaita.dev",
+    "flatpak-builder@latest",
+    "serve@latest",
+    "ruff@latest",
+    "skjold@latest",
+    "editorconfig-checker@latest",
+    "meson@latest",
+    "ninja@latest",
+    "uv@latest"
+  ],
+  "env": {
+    "UV_VENV_CLEAR": "1",
+    "UV_MANAGED_PYTHON": "1",
+    "PYTHONPATH": ".:.venv/lib/python3.12/site-packages:$PYTHONPATH",
+    "GI_TYPELIB_PATH": "$DEVBOX_PROJECT_ROOT/.devbox/nix/profile/default/lib/girepository-1.0:/usr/lib64/girepository-1.0:/usr/lib/girepository-1.0:$GI_TYPELIB_PATH"
+  },
+  "shell": {
+    "init_hook": [
+      "pre-commit install -f"
+    ]
+  }
+}

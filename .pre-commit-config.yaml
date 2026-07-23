@@ -1,0 +1,99 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+exclude: ^(tests)/.*
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        name: "Trailing Whitespace Remover"
+        description: "Removes trailing whitespace from all lines."
+      - id: check-ast
+        name: "Check Python AST"
+        description: "Verifies Python files parse as valid syntax trees."
+      - id: check-case-conflict
+        name: "Check Case Conflict"
+        description: "Detects files with names that would conflict on a case-insensitive filesystem."
+      - id: check-json
+        name: "Check JSON Syntax"
+        description: "Validates JSON files for syntax errors."
+      - id: check-merge-conflict
+        name: "Check for Merge Conflicts"
+        description: "Detects merge conflict markers in files."
+      - id: check-yaml
+        name: "Check YAML Syntax"
+        description: "Validates YAML files for syntax errors."
+      - id: check-toml
+        name: "Check TOML Syntax"
+        description: "Validates TOML files for syntax errors."
+      - id: debug-statements
+        name: "Debug Statement Detection"
+        description: "Checks for debug statements (e.g., print, pdb) in Python files."
+      - id: detect-private-key
+        name: "Detect Private Keys"
+        description: "Prevents committing files that appear to contain private keys."
+
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: v1.5.6
+    hooks:
+      - id: insert-license
+        name: "Insert License Header"
+        description: "Inserts license headers into Python files."
+        files: \.py$
+        args:
+          [
+            "--license-filepath",
+            "LICENSE_HEADER.txt",
+            "--comment-style",
+            "",
+            "--use-current-year",
+            "--no-extra-eol",
+          ]
+
+  - repo: https://github.com/asottile/reorder-python-imports
+    rev: v3.16.0
+    hooks:
+      - id: reorder-python-imports
+        name: "Reorder Python Imports"
+        description: "Automatically sorts and groups Python imports."
+
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    rev: v0.15.20
+    hooks:
+      - id: ruff
+        name: "Ruff Linter"
+        description: "Runs Ruff, an extremely fast Python linter."
+        args: [--fix]
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v2.3.0
+    hooks:
+      - id: mypy
+        name: "mypy (strict type checking)"
+        description: "Run mypy in strict mode to perform static type checking."
+        args:
+          - --strict
+        additional_dependencies:
+          - PyGObject-stubs>=2.10.0
+          - pypdf>=6.14.2
+          - Pillow>=12.3.0
+
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.9.4
+    hooks:
+      - id: bandit
+        name: "Bandit Security Linter"
+        description: "Runs Bandit to find common security issues in Python code."
+        language_version: python3
+        types: [python]
+        args: [-c, bandit.yaml]
+
+  - repo: local
+    hooks:
+      - id: tests
+        name: Run tests
+        description: Runs `make tests`.
+        entry: make tests
+        language: system
+        pass_filenames: false
+        always_run: true

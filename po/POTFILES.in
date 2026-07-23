@@ -1,0 +1,11 @@
+data/io.gitlab.demsking.filigrane.desktop.in
+data/io.gitlab.demsking.filigrane.metainfo.xml.in
+filigrane/application.py
+filigrane/ui/window.py
+filigrane/ui/sidebar.py
+filigrane/ui/preview_widget.py
+filigrane/ui/preferences.py
+filigrane/ui/about.py
+filigrane/ui/progress_dialog.py
+filigrane/ui/shortcuts.py
+filigrane/core/pdf_processor.py

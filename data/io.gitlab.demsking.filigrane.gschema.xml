@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="io.gitlab.demsking.filigrane" path="/io/gitlab/demsking/filigrane/">
+    <key name="default-output-dir" type="s">
+      <default>''</default>
+      <summary>Default output directory</summary>
+      <description>Default directory path where watermarked PDFs will be saved.</description>
+    </key>
+    <key name="overwrite-behavior" type="b">
+      <default>false</default>
+      <summary>Overwrite existing files</summary>
+      <description>Whether to overwrite original files by default without asking for a new file name.</description>
+    </key>
+    <key name="remember-last-dir" type="b">
+      <default>true</default>
+      <summary>Remember last directory</summary>
+      <description>Whether to remember the last used output directory across application restarts.</description>
+    </key>
+    <key name="preview-quality" type="s">
+      <default>'medium'</default>
+      <summary>Preview quality</summary>
+      <description>Quality level for live PDF preview rendering ('low', 'medium', 'high').</description>
+    </key>
+    <key name="theme-preference" type="s">
+      <default>'system'</default>
+      <summary>Theme preference</summary>
+      <description>Color scheme preference ('system', 'light', 'dark').</description>
+    </key>
+    <key name="language" type="s">
+      <default>'system'</default>
+      <summary>Application language</summary>
+      <description>Application display language locale.</description>
+    </key>
+    <key name="log-level" type="s">
+      <default>'INFO'</default>
+      <summary>Logging level</summary>
+      <description>Logging verbosity ('DEBUG', 'INFO', 'WARNING', 'ERROR').</description>
+    </key>
+    <key name="window-width" type="i">
+      <default>985</default>
+      <summary>Window width</summary>
+      <description>Saved main window width in pixels.</description>
+    </key>
+    <key name="window-height" type="i">
+      <default>1000</default>
+      <summary>Window height</summary>
+      <description>Saved main window height in pixels.</description>
+    </key>
+    <key name="is-maximized" type="b">
+      <default>false</default>
+      <summary>Window maximized</summary>
+      <description>Whether the main window was maximized on last exit.</description>
+    </key>
+  </schema>
+</schemalist>

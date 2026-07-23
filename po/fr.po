@@ -1,0 +1,636 @@
+# French translations for Filigrane.
+# Copyright (C) 2026 demsking
+# This file is distributed under the same license as the Filigrane package.
+# demsking <demsking@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: filigrane 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-23 09:25+0200\n"
+"PO-Revision-Date: 2026-07-23 09:25+0200\n"
+"Last-Translator: demsking <demsking@gmail.com>\n"
+"Language-Team: French <fr@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Centered app title widget
+#: data/io.gitlab.demsking.filigrane.desktop.in:2
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:6
+#: filigrane/ui/window.py:71 filigrane/ui/window.py:114
+#: filigrane/ui/about.py:39
+msgid "Filigrane"
+msgstr "Filigrane"
+
+#: data/io.gitlab.demsking.filigrane.desktop.in:3
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:8
+msgid "Add text or image watermarks to PDF documents"
+msgstr "Ajoutez des filigranes de texte ou d'image aux documents PDF"
+
+#: data/io.gitlab.demsking.filigrane.desktop.in:10
+msgid "PDF;Watermark;Filigrane;Stamp;Sign;Security;"
+msgstr "PDF;Filigrane;Tampon;Signature;Sécurité;"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:11
+msgid ""
+"Filigrane is a modern application designed to apply elegant vector text or "
+"high-resolution image watermarks to PDF documents quickly and securely."
+msgstr ""
+"Filigrane est une application moderne conçue pour appliquer rapidement et en "
+"toute sécurité des filigranes de texte vectoriel élégants ou d'images haute "
+"résolution aux documents PDF."
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:14
+msgid "Features include:"
+msgstr "Les fonctionnalités incluent :"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:16
+msgid ""
+"Support for custom text watermarks with font selection, opacity, rotation, "
+"and alignment"
+msgstr ""
+"Prise en charge de filigranes de texte personnalisés avec sélection de la "
+"police, de l'opacité, de la rotation et de l'alignement"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:17
+msgid ""
+"Support for PNG, SVG, and JPEG image watermarks with scale and aspect ratio "
+"options"
+msgstr ""
+"Prise en charge de filigranes d'images PNG, SVG et JPEG avec options d'échelle "
+"et de proportions"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:18
+msgid ""
+"Multiple placement modes including Center, Corners, Tiled patterns, and "
+"custom X/Y positioning"
+msgstr ""
+"Plusieurs modes de placement, y compris le centre, les coins, les motifs en "
+"mosaïque et le positionnement X/Y personnalisé"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:19
+msgid "Real-time live document preview powered by Poppler"
+msgstr "Aperçu du document en direct et en temps réel propulsé par Poppler"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:20
+msgid ""
+"Full integration with GNOME Files, recent documents, and native GTK4/"
+"Libadwaita portal dialogs"
+msgstr ""
+"Intégration complète avec Fichiers GNOME, les documents récents et les "
+"dialogues de portail natifs GTK4/Libadwaita"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:29
+msgid "Main application interface"
+msgstr "Interface principale de l'application"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:33
+msgid "Main application interface with text watermark"
+msgstr "Interface principale de l'application avec filigrane de texte"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:37
+msgid "Main application interface with image watermark"
+msgstr "Interface principale de l'application avec filigrane d'image"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:41
+msgid "Application preferences"
+msgstr "Préférences de l'application"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:51
+msgid "Sébastien Demanou"
+msgstr "Sébastien Demanou"
+
+#: data/io.gitlab.demsking.filigrane.metainfo.xml.in:79
+msgid "Initial release of Filigrane for GNOME."
+msgstr "Première version de Filigrane pour GNOME."
+
+#: filigrane/ui/window.py:132 filigrane/ui/window.py:420
+#: filigrane/ui/shortcuts.py:89
+msgid "Close Document"
+msgstr "Fermer le document"
+
+#: filigrane/ui/window.py:141 filigrane/ui/window.py:176
+#: filigrane/ui/shortcuts.py:65
+msgid "Open PDF File"
+msgstr "Ouvrir un fichier PDF"
+
+#: filigrane/ui/window.py:153
+msgid "Export"
+msgstr "Exporter"
+
+#: filigrane/ui/window.py:156
+msgid "Apply watermark and export PDF"
+msgstr "Appliquer le filigrane et exporter le PDF"
+
+#: filigrane/ui/window.py:171
+msgid "Add a Watermark to a PDF"
+msgstr "Ajouter un filigrane à un PDF"
+
+#: filigrane/ui/window.py:172
+msgid "Drag &amp; drop a PDF file here"
+msgstr "Glissez &amp; déposez un fichier PDF ici"
+
+#: filigrane/ui/window.py:279 filigrane/ui/shortcuts.py:36
+msgid "New Window"
+msgstr "Nouvelle fenêtre"
+
+#: filigrane/ui/window.py:280
+msgid "Open PDF"
+msgstr "Ouvrir un PDF"
+
+#: filigrane/ui/window.py:284 filigrane/ui/shortcuts.py:71
+msgid "Open PDF With…"
+msgstr "Ouvrir le PDF avec…"
+
+#: filigrane/ui/window.py:285 filigrane/ui/shortcuts.py:77
+msgid "Print PDF…"
+msgstr "Imprimer le PDF…"
+
+#: filigrane/ui/window.py:289 filigrane/ui/preferences.py:44
+#: filigrane/ui/shortcuts.py:42
+msgid "Preferences"
+msgstr "Préférences"
+
+#: filigrane/ui/window.py:290 filigrane/ui/shortcuts.py:48
+msgid "Keyboard Shortcuts"
+msgstr "Raccourcis clavier"
+
+#: filigrane/ui/window.py:291
+msgid "About Filigrane"
+msgstr "À propos de Filigrane"
+
+#: filigrane/ui/window.py:298
+msgid "Main Menu"
+msgstr "Menu principal"
+
+#: filigrane/ui/window.py:347
+msgid "No valid PDF file provided"
+msgstr "Aucun fichier PDF valide n'a été fourni"
+
+#: filigrane/ui/window.py:352
+msgid "Open New Document?"
+msgstr "Ouvrir un nouveau document ?"
+
+#: filigrane/ui/window.py:353
+msgid ""
+"You have unsaved watermark settings changes. Opening a new document will "
+"discard these changes."
+msgstr ""
+"Vous avez des modifications de filigrane non enregistrées. Ouvrir un "
+"nouveau document abandonnera ces modifications."
+
+#: filigrane/ui/window.py:355 filigrane/ui/window.py:419
+#: filigrane/ui/window.py:612 filigrane/ui/sidebar.py:748
+#: filigrane/ui/preferences.py:167 filigrane/ui/progress_dialog.py:75
+msgid "Cancel"
+msgstr "Annuler"
+
+#: filigrane/ui/window.py:356
+msgid "Open Document"
+msgstr "Ouvrir le document"
+
+#: filigrane/ui/window.py:416
+msgid "Close Document?"
+msgstr "Fermer le document ?"
+
+#: filigrane/ui/window.py:417
+msgid ""
+"You have unsaved watermark settings changes. Are you sure you want to close "
+"this document?"
+msgstr ""
+"Vous avez des modifications de filigrane non enregistrées. Voulez-vous "
+"vraiment fermer ce document ?"
+
+#: filigrane/ui/window.py:442 filigrane/ui/window.py:468
+msgid "No PDF file open"
+msgstr "Aucun fichier PDF ouvert"
+
+#: filigrane/ui/window.py:456
+msgid "Failed to open PDF with external app"
+msgstr "Échec de l'ouverture du PDF avec une application externe"
+
+#: filigrane/ui/window.py:500
+msgid "Failed to print PDF"
+msgstr "Échec de l'impression du PDF"
+
+#: filigrane/ui/window.py:508 filigrane/ui/shortcuts.py:83
+msgid "Export Watermarked PDF"
+msgstr "Exporter le PDF avec filigrane"
+
+#: filigrane/ui/window.py:576
+msgid "Export completed successfully!"
+msgstr "Exportation terminée avec succès !"
+
+#: filigrane/ui/window.py:585
+msgid "Export cancelled"
+msgstr "Exportation annulée"
+
+#: filigrane/ui/window.py:587
+msgid "Export Failed"
+msgstr "Échec de l'exportation"
+
+#: filigrane/ui/window.py:588
+msgid "OK"
+msgstr "OK"
+
+#: filigrane/ui/window.py:609
+msgid "Quit Filigrane?"
+msgstr "Quitter Filigrane ?"
+
+#: filigrane/ui/window.py:610
+msgid ""
+"You have unsaved watermark settings changes. Are you sure you want to quit?"
+msgstr ""
+"Vous avez des modifications de filigrane non enregistrées. Voulez-vous "
+"vraiment quitter ?"
+
+#: filigrane/ui/window.py:613
+msgid "Quit Without Saving"
+msgstr "Quitter sans enregistrer"
+
+#: filigrane/ui/sidebar.py:98
+msgid "Text"
+msgstr "Texte"
+
+#: filigrane/ui/sidebar.py:102
+msgid "Image"
+msgstr "Image"
+
+#: filigrane/ui/sidebar.py:121
+msgid "Text Parameters"
+msgstr "Paramètres du texte"
+
+#: filigrane/ui/sidebar.py:125
+msgid "Watermark Text"
+msgstr "Texte du filigrane"
+
+#: filigrane/ui/sidebar.py:132
+msgid "Font Family"
+msgstr "Famille de police"
+
+#: filigrane/ui/sidebar.py:141
+msgid "Font Size"
+msgstr "Taille de police"
+
+#: filigrane/ui/sidebar.py:148
+msgid "Text Style"
+msgstr "Style de texte"
+
+#: filigrane/ui/sidebar.py:172
+msgid "Watermark Color"
+msgstr "Couleur du filigrane"
+
+#: filigrane/ui/sidebar.py:181 filigrane/ui/sidebar.py:226
+msgid "Opacity"
+msgstr "Opacité"
+
+#: filigrane/ui/sidebar.py:189
+msgid "Rotation Angle (°)"
+msgstr "Angle de rotation (°)"
+
+#: filigrane/ui/sidebar.py:198
+msgid "Image Parameters"
+msgstr "Paramètres de l'image"
+
+#: filigrane/ui/sidebar.py:219
+msgid "Scale Factor"
+msgstr "Facteur d'échelle"
+
+#: filigrane/ui/sidebar.py:233
+msgid "Rotation Angle"
+msgstr "Angle de rotation"
+
+#: filigrane/ui/sidebar.py:239
+msgid "Preserve Aspect Ratio"
+msgstr "Conserver les proportions"
+
+#: filigrane/ui/sidebar.py:256
+msgid "Placement &amp; Alignment"
+msgstr "Placement &amp; alignement"
+
+#: filigrane/ui/sidebar.py:260
+msgid "Position Preset"
+msgstr "Préréglage de position"
+
+#: filigrane/ui/sidebar.py:263
+msgid "Center"
+msgstr "Centré"
+
+#: filigrane/ui/sidebar.py:264
+msgid "Top Left"
+msgstr "Haut gauche"
+
+#: filigrane/ui/sidebar.py:265
+msgid "Top Right"
+msgstr "Haut droite"
+
+#: filigrane/ui/sidebar.py:266
+msgid "Bottom Left"
+msgstr "Bas gauche"
+
+#: filigrane/ui/sidebar.py:267
+msgid "Bottom Right"
+msgstr "Bas droite"
+
+#: filigrane/ui/sidebar.py:268
+msgid "Repeat Whole Page (Tiled)"
+msgstr "Répéter sur toute la page (Mosaïque)"
+
+#: filigrane/ui/sidebar.py:269
+msgid "Custom X/Y"
+msgstr "X/Y personnalisé"
+
+#: filigrane/ui/sidebar.py:278 filigrane/ui/sidebar.py:669
+msgid "Margin X"
+msgstr "Marge X"
+
+#: filigrane/ui/sidebar.py:285 filigrane/ui/sidebar.py:670
+msgid "Margin Y"
+msgstr "Marge Y"
+
+#: filigrane/ui/sidebar.py:292
+msgid "Custom Position X (%)"
+msgstr "Position X personnalisée (%)"
+
+#: filigrane/ui/sidebar.py:300
+msgid "Custom Position Y (%)"
+msgstr "Position Y personnalisée (%)"
+
+#: filigrane/ui/sidebar.py:312
+msgid "Document Security"
+msgstr "Sécurité du document"
+
+#: filigrane/ui/sidebar.py:316
+msgid "Protect Document"
+msgstr "Protéger le document"
+
+#: filigrane/ui/sidebar.py:322
+msgid "Protection Level"
+msgstr "Niveau de protection"
+
+#: filigrane/ui/sidebar.py:325
+msgid "Standard (Vector)"
+msgstr "Standard (Vectoriel)"
+
+#: filigrane/ui/sidebar.py:326
+msgid "Maximum (Flattened)"
+msgstr "Maximum (Aplati)"
+
+#: filigrane/ui/sidebar.py:339
+msgid "Watermark Presets"
+msgstr "Préréglages de filigrane"
+
+#: filigrane/ui/sidebar.py:343
+msgid "Load Preset"
+msgstr "Charger un préréglage"
+
+#: filigrane/ui/sidebar.py:351
+msgid "Save Current Preset"
+msgstr "Enregistrer le préréglage actuel"
+
+#: filigrane/ui/sidebar.py:366
+msgid "Select PDF Document"
+msgstr "Sélectionner un document PDF"
+
+#: filigrane/ui/sidebar.py:487
+msgid "Change..."
+msgstr "Changer…"
+
+#: filigrane/ui/sidebar.py:495
+msgid "Clear Image"
+msgstr "Effacer l'image"
+
+#: filigrane/ui/sidebar.py:509
+msgid "Drop image here"
+msgstr "Déposez l'image ici"
+
+#: filigrane/ui/sidebar.py:514
+msgid "Supports PNG, SVG, or JPEG"
+msgstr "Prend en charge PNG, SVG ou JPEG"
+
+#: filigrane/ui/sidebar.py:522
+msgid "Select Image..."
+msgstr "Sélectionner une image…"
+
+#: filigrane/ui/sidebar.py:559
+msgid "Select Watermark Image"
+msgstr "Sélectionner l'image de filigrane"
+
+#: filigrane/ui/sidebar.py:662
+msgid "Pattern Spacing X"
+msgstr "Espacement du motif X"
+
+#: filigrane/ui/sidebar.py:663
+msgid "Pattern Spacing Y"
+msgstr "Espacement du motif Y"
+
+#: filigrane/ui/sidebar.py:732
+msgid "Save Watermark Preset"
+msgstr "Enregistrer le préréglage de filigrane"
+
+#: filigrane/ui/sidebar.py:733
+msgid "Enter a name for this custom watermark configuration:"
+msgstr "Saisissez un nom pour cette configuration de filigrane personnalisée :"
+
+#: filigrane/ui/sidebar.py:736
+msgid "Preset Name"
+msgstr "Nom du préréglage"
+
+#: filigrane/ui/sidebar.py:742
+msgid "Custom Preset"
+msgstr "Préréglage personnalisé"
+
+#: filigrane/ui/sidebar.py:749
+msgid "Save"
+msgstr "Enregistrer"
+
+#: filigrane/ui/preview_widget.py:89
+msgid "Preview Unavailable"
+msgstr "Aperçu indisponible"
+
+#: filigrane/ui/preview_widget.py:90
+msgid ""
+"Unable to render page preview. Please check document integrity or settings."
+msgstr ""
+"Impossible d'afficher l'aperçu de la page. Veuillez vérifier l'intégrité du "
+"document ou les paramètres."
+
+#: filigrane/ui/preview_widget.py:109 filigrane/ui/shortcuts.py:123
+msgid "Previous Page"
+msgstr "Page précédente"
+
+#: filigrane/ui/preview_widget.py:119 filigrane/ui/shortcuts.py:129
+msgid "Next Page"
+msgstr "Page suivante"
+
+#: filigrane/ui/preview_widget.py:128 filigrane/ui/shortcuts.py:106
+msgid "Zoom Out"
+msgstr "Zoom arrière"
+
+#: filigrane/ui/preview_widget.py:138 filigrane/ui/shortcuts.py:100
+msgid "Zoom In"
+msgstr "Zoom avant"
+
+#: filigrane/ui/preview_widget.py:143 filigrane/ui/shortcuts.py:112
+msgid "Fit Page"
+msgstr "Ajuster à la page"
+
+#. noqa: E402
+#. noqa: E402
+#: filigrane/ui/preferences.py:48 filigrane/ui/shortcuts.py:32
+msgid "General"
+msgstr "Général"
+
+#: filigrane/ui/preferences.py:54
+msgid "Document Security &amp; Protection"
+msgstr "Sécurité &amp; protection du document"
+
+#: filigrane/ui/preferences.py:59
+msgid "Protect Saved PDFs against Editing"
+msgstr "Protéger les PDF enregistrés contre les modifications"
+
+#: filigrane/ui/preferences.py:60
+msgid "Lock document modifications with AES-256 security permissions"
+msgstr ""
+"Verrouiller les modifications du document avec des autorisations de sécurité "
+"AES-256"
+
+#: filigrane/ui/preferences.py:67
+msgid "Protection Mode"
+msgstr "Mode de protection"
+
+#: filigrane/ui/preferences.py:70
+msgid "Standard (Vector AES-256)"
+msgstr "Standard (Vectoriel AES-256)"
+
+#: filigrane/ui/preferences.py:71
+msgid "Maximum (Flattened Anti-Tamper)"
+msgstr "Maximum (Aplati anti-altération)"
+
+#: filigrane/ui/preferences.py:83
+msgid "Allow Printing"
+msgstr "Autoriser l'impression"
+
+#: filigrane/ui/preferences.py:84
+msgid "Permit high-resolution printing of watermarked documents"
+msgstr ""
+"Autoriser l'impression haute résolution des documents filigranés"
+
+#: filigrane/ui/preferences.py:91
+msgid "Appearance &amp; Performance"
+msgstr "Apparence &amp; performances"
+
+#: filigrane/ui/preferences.py:96
+msgid "Color Scheme"
+msgstr "Jeu de couleurs"
+
+#: filigrane/ui/preferences.py:97
+msgid "System Default"
+msgstr "Par défaut du système"
+
+#: filigrane/ui/preferences.py:97
+msgid "Light"
+msgstr "Clair"
+
+#: filigrane/ui/preferences.py:97
+msgid "Dark"
+msgstr "Sombre"
+
+#: filigrane/ui/preferences.py:107
+msgid "Preview Quality"
+msgstr "Qualité de l'aperçu"
+
+#: filigrane/ui/preferences.py:108
+msgid "Low (Fast)"
+msgstr "Basse (Rapide)"
+
+#: filigrane/ui/preferences.py:108
+msgid "Medium (Balanced)"
+msgstr "Moyenne (Équilibrée)"
+
+#: filigrane/ui/preferences.py:108
+msgid "High (Crisp)"
+msgstr "Haute (Nette)"
+
+#: filigrane/ui/preferences.py:118
+msgid "Custom Watermark Presets"
+msgstr "Préréglages de filigrane personnalisés"
+
+#: filigrane/ui/preferences.py:136
+msgid "No Custom Presets"
+msgstr "Aucun préréglage personnalisé"
+
+#: filigrane/ui/preferences.py:137
+msgid "Saved custom presets will appear here."
+msgstr "Les préréglages personnalisés enregistrés apparaîtront ici."
+
+#: filigrane/ui/preferences.py:148
+#, python-brace-format
+msgid "{type} Watermark"
+msgstr "Filigrane {type}"
+
+#: filigrane/ui/preferences.py:151
+msgid "Delete Preset"
+msgstr "Supprimer le préréglage"
+
+#: filigrane/ui/preferences.py:164
+msgid "Delete Watermark Preset"
+msgstr "Supprimer le préréglage de filigrane"
+
+#: filigrane/ui/preferences.py:165
+#, python-brace-format
+msgid "Are you sure you want to delete the preset \"{name}\"?"
+msgstr "Voulez-vous vraiment supprimer le préréglage « {name} » ?"
+
+#: filigrane/ui/preferences.py:168
+msgid "Delete"
+msgstr "Supprimer"
+
+#: filigrane/ui/about.py:42
+msgid ""
+"Filigrane is a modern GNOME application designed to apply elegant vector "
+"text or high-resolution image watermarks to PDF documents quickly and "
+"securely."
+msgstr ""
+"Filigrane est une application GNOME moderne conçue pour appliquer rapidement "
+"et en toute sécurité des filigranes de texte vectoriel élégants ou d'images "
+"haute résolution aux documents PDF."
+
+#: filigrane/ui/progress_dialog.py:50
+msgid "Exporting Watermarked PDF"
+msgstr "Exportation du PDF filigrané"
+
+#: filigrane/ui/progress_dialog.py:62
+msgid "Preparing export..."
+msgstr "Préparation de l'exportation…"
+
+#: filigrane/ui/progress_dialog.py:100
+msgid "Cancelling operation..."
+msgstr "Annulation de l'opération…"
+
+#: filigrane/ui/shortcuts.py:54
+msgid "Quit"
+msgstr "Quitter"
+
+#: filigrane/ui/shortcuts.py:61
+msgid "Document"
+msgstr "Document"
+
+#: filigrane/ui/shortcuts.py:96
+msgid "Zoom"
+msgstr "Zoom"
+
+#: filigrane/ui/shortcuts.py:119
+msgid "Navigation"
+msgstr "Navigation"
+
+#: filigrane/ui/shortcuts.py:135
+msgid "First Page"
+msgstr "Première page"
+
+#: filigrane/ui/shortcuts.py:141
+msgid "Last Page"
+msgstr "Dernière page"
